@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title >Get All</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+
+<body class="table-header">
+<header th:insert="header/header::header"></header>
+<div style="width: 519px;display: flex; justify-content: space-between;margin-left: 339px; ">
+
+
+    <tr th:each="comp : ${companies}">
+        <div style="display: flex; justify-content: space-between; width: 800px;margin: 0 auto; border-radius: 10px; border: 1px solid gray; margin-top: 10px;"><hr>
+            <th><label for="companyName">CompanyName:</label></th>
+            <td><label id="companyName" th:text="${comp.getCompanyName()}" class="title"></label></td>
+            <a style="background-color: blue; border: none; border-radius: 5px" class="btn btn-info btn-sm"  th:href="@{/companies/{id}/edit(id=${comp.id})}">UPDATE</a>
+            <a style="background-color: red; border: none; border-radius: 5px;" class="btn btn-info btn-sm" th:method="DELETE" th:href="@{/companies/{id}(id=${comp.getId()})}">DELETE</a><hr>
+            <br>
+        </div>
+    </tr>
+
+</div>
+</body>
+</html>
