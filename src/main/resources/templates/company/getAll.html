@@ -8,19 +8,16 @@
 
 <body class="table-header">
 <header th:insert="header/header::header"></header>
-<div style="width: 519px;display: flex; justify-content: space-between;margin-left: 339px; ">
-
-
+<div style="width: 519px;display: flex; flex-direction: column; gap:10px;margin-left: 339px; ">
     <tr th:each="comp : ${companies}">
         <div style="display: flex; justify-content: space-between; width: 800px;margin: 0 auto; border-radius: 10px; border: 1px solid gray; margin-top: 10px;"><hr>
             <th><label for="companyName">CompanyName:</label></th>
             <td><label id="companyName" th:text="${comp.getCompanyName()}" class="title"></label></td>
-            <a style="background-color: blue; border: none; border-radius: 5px" class="btn btn-info btn-sm"  th:href="@{/companies/{id}/edit(id=${comp.id})}">UPDATE</a>
-            <a style="background-color: red; border: none; border-radius: 5px;" class="btn btn-info btn-sm" th:method="DELETE" th:href="@{/companies/{id}(id=${comp.getId()})}">DELETE</a><hr>
+            <a style="background-color: blue; border: none; border-radius: 5px" class="btn btn-info btn-sm"  th:href="@{/{id}/edit(id=${comp.id})}">UPDATE</a>
+            <a style="background-color: red; border: none; border-radius: 5px;" class="btn btn-info btn-sm" th:method="DELETE" th:href="@{/{id}(id=${comp.getId()})}">DELETE</a><hr>
             <br>
         </div>
     </tr>
-
 </div>
 </body>
 </html>

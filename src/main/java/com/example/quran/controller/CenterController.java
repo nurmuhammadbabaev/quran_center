@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping
 @RequiredArgsConstructor
 public class CenterController {
     private final CenterService service;
@@ -41,7 +41,7 @@ public class CenterController {
         //Добавляем компании в БД
         model.addAttribute("company",service.create(quranCenterRequest));
         //После добавления вернемся обратно в главную страницу
-        return "redirect:/companies";
+        return "redirect:/";
     }
 
     @GetMapping("/{id}/edit")
@@ -56,7 +56,7 @@ public class CenterController {
         //Изменяем компании
          service.update(id, centerRequest);
         //После изменения вернемся обратно на страницу all
-        return "redirect:/companies/all";
+        return "redirect:/all";
     }
 
     @GetMapping("/{id}")
@@ -64,7 +64,7 @@ public class CenterController {
         //Удаляем компании
         service.deleteById(id);
         //После удаления компании вернемся обратно на страницу all
-        return "redirect:/companies/all";
+        return "redirect:/all";
     }
 
 }

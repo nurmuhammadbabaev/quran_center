@@ -9,7 +9,7 @@
 <body class="table-header">
 <header th:insert="header/header::header"></header>
 <div class="container mt-5">
-    <form th:method="PATH" th:action="@{/companies/{id}(id=${company.getId()})}" th:object="${company}">
+    <form th:method="PATH" th:action="@{/{id}(id=${company.getId()})}" th:object="${company}">
         <input type="hidden" name = "id" th:field="*{id}">
         <label for="companyName" class="form-label">companyName:</label>
         <input th:field="*{companyName}" type="text" id="companyName" class="input"><br>
