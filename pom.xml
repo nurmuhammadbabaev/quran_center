@@ -14,7 +14,7 @@
     <name>quran_center</name>
     <description>quran_center</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
