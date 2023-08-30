@@ -11,7 +11,7 @@
 
 
 <div>
-<form th:method="POST" th:action="@{/companies/save}" th:object="${company}">
+<form th:method="POST" th:action="@{/save}" th:object="${company}">
     <label for="companyName" class="form-label">companyName:</label>
     <input th:field="*{companyName}" type="text" id="companyName" class="input"><br><hr>
 
