@@ -1,1 +1,7 @@
 # quran_center
+spring_profiles_active=prod
+PROD_DB_HOST=HOST_HERE
+PROD_DB_PORT=POST_HERE
+PROD_DB_NAME=railway
+PROD_DB_PASSWORD=PASSWORD_HERE
+PROD_DB_USERNAME=postgres
